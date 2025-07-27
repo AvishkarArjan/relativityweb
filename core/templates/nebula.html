@@ -1,12 +1,63 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %} - Nebula{% endblock %}
 
 {% block content %}
-    <h2 class="text-2xl font-semibold mb-4">About Our AI Funds</h2>
-    <p class="text-gray-700 leading-relaxed">
-        We build AI-driven investment strategies to help investors outperform benchmarks using algorithms,
-        data science, and disciplined research.
-    </p>
+    <h2 class="text-2xl font-semibold mb-4">Project Nebula</h2>
+
+    <div class="flex gap-20">
+        <div class="flex flex-col justify-between">
+            <p class="text-gray-700 leading-relaxed">
+                Nebula is an attempt to automate the operations of a <i>fund manager</i>. 
+                Its a framework which combines relevant & high quality share data with investment guidelines.
+            </p>
+
+            <p class="text-sm">The motivation for this project lies in our belief that when it comes to long-term investing, discipline can overpower genius.</p>
+
+            <p class="text-sm">sdfsdf </p>
+        
+        </div>
+        
+        <img src="{% static 'images/nebula.gif' %}" class="max-w-[300px]">
+    
+    </div>
+
+    <br>
+
+    <!-- List of frameworks -->
+
+    <div class="flex-col gap-1 mb-2">
+        <h1 class="text-xl font-semibold">Nebula Frameworks</h1>
+        <p class="text-xs">Below are our available nebula frameworks, along with their details.</p>
+    </div>
+
+    <div class="bg-gray-200 rounded-sm">
+        <table class="min-w-full ">
+            <thead class="">
+                <tr>
+                    <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase">Portfolio</th>
+                    <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase">Framework Doc.</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for r in returns %}
+                <tr class="border-t">
+                    <td class="px-4 py-2">{{ r.strategy_name }}</td>
+                    <td class="px-4 py-2">{{ r.date }}</td>
+                    <td class="px-4 py-2">{{ r.return_percent }}</td>
+                    <td class="px-4 py-2">{{ r.notes }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="4" class="px-4 py-2 text-center text-gray-500">No data available.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    
+  
 {% endblock %}
 

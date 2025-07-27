@@ -1,26 +1,32 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %} - Home{% endblock %}
 
 {% block content %}
     <p>We perform R&D to build LLM based systems which can automate equity research and fund management.</p>
-    <h2 class="text-2xl font-semibold mb-4">Fund Performance</h2>
-    <!-- <h1 class="text-2xl font-bold mb-4">Return Records</h1> -->
+    <br>
+
+    <div class="flex gap-2 items-center">
+        <h2 class="text-2xl font-semibold">Performance</h2>
+        <img class="max-w-[50px]" src="{% static 'images/live.gif' %}" alt="Live">
+    </div>
+
 
     <table class="min-w-full bg-white shadow rounded">
-        <thead>
+        <thead class="">
             <tr>
-                <th class="px-4 py-2 border">Date</th>
-                <th class="px-4 py-2 border">Strategy</th>
-                <th class="px-4 py-2 border">Return (%)</th>
-                <th class="px-4 py-2 border">Notes</th>
+                <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">Portfolio</th>
+                <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">Start Date</th>
+                <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">ARR (%)</th>
+                <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">CRR (%)</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="text-sm">
             {% for r in returns %}
             <tr class="border-t">
-                <td class="px-4 py-2">{{ r.date }}</td>
                 <td class="px-4 py-2">{{ r.strategy_name }}</td>
+                <td class="px-4 py-2">{{ r.date }}</td>
                 <td class="px-4 py-2">{{ r.return_percent }}</td>
                 <td class="px-4 py-2">{{ r.notes }}</td>
             </tr>
@@ -31,5 +37,7 @@
             {% endfor %}
         </tbody>
     </table>
+
+    
 {% endblock %}
 

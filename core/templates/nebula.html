@@ -6,8 +6,8 @@
 {% block content %}
     <h2 class="text-2xl font-semibold mb-4">Project Nebula</h2>
 
-    <div class="flex gap-20">
-        <div class="flex flex-col justify-between">
+    <div class="flex flex-col items-start md:flex-row gap-10 md:gap-20">
+        <div class="flex flex-col gap-5">
             <p class="text-gray-700 leading-relaxed">
                 Nebula is an attempt to automate the operations of a <i>fund manager</i>. 
                 Its a framework which combines relevant & high quality share data with investment guidelines.
@@ -15,11 +15,20 @@
 
             <p class="text-sm">The motivation for this project lies in our belief that when it comes to long-term investing, discipline can overpower genius.</p>
 
-            <p class="text-sm">sdfsdf </p>
         
         </div>
+
+        <div class="flex flex-col mx-auto max-w-[300px]">
+            <img src="{% static 'images/nebula.gif' %}" class="mb-1">
+            <p class="text-[10px]">
+            <i>
+            "A <b>Nebula</b> is a vast cloud of ionized gas and cosmic dust in space, often serving as a nursery for the formation of stars and planetary systems." — Adapted from 
+            <a class="text-blue-500 hover:underline" href="https://en.wikipedia.org/wiki/Nebula#:~:text=A%20nebula%20(,planetary%20system%20objects.">Wikipedia</a>. 
+            </i>
+            It essentially represents the formation of something valuable from a large hunk of randomness. It holds the potential for greatness beyond comprehension — much like an investment portfolio.
+            <p>
         
-        <img src="{% static 'images/nebula.gif' %}" class="max-w-[300px]">
+        </div>
     
     </div>
 

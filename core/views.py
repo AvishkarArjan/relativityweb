@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Return
 
 def home(request):
-    returns = Return.objects.all().order_by('-date')  # latest first
+    returns = Return.objects.all().order_by('-start_date')  # latest first
     # returns = []
     """
     Date	Strategy	Return (%)	Notes

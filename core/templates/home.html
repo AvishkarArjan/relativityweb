@@ -18,6 +18,7 @@
             <tr>
                 <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">Portfolio</th>
                 <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">Start Date</th>
+                <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">Period (Years)</th>
                 <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">ARR (%)</th>
                 <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">CRR (%)</th>
             </tr>
@@ -25,10 +26,11 @@
         <tbody class="text-sm">
             {% for r in returns %}
             <tr class="border-t">
-                <td class="px-4 py-2">{{ r.strategy_name }}</td>
-                <td class="px-4 py-2">{{ r.date }}</td>
-                <td class="px-4 py-2">{{ r.return_percent }}</td>
-                <td class="px-4 py-2">{{ r.notes }}</td>
+                <td class="px-4 py-2">{{ r.framework }}</td>
+                <td class="px-4 py-2">{{ r.start_date }}</td>
+                <td class="px-4 py-2">{{ r.period }}</td>
+                <td class="px-4 py-2">{{ r.arr }}</td>
+                <td class="px-4 py-2">{{ r.crr }}</td>
             </tr>
             {% empty %}
             <tr>

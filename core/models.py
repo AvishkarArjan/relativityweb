@@ -1,13 +1,14 @@
 from django.db import models
 
 class Return(models.Model):
-    date = models.DateField()
-    strategy_name = models.CharField(max_length=100)
-    return_percent = models.DecimalField(max_digits=5, decimal_places=2)
-    notes = models.TextField(blank=True)
+    framework = models.CharField(max_length=200)
+    start_date = models.DateField()
+    period = models.DecimalField(max_digits=5, decimal_places=2)
+    arr = models.DecimalField(max_digits=5, decimal_places=2)
+    crr = models.DecimalField(max_digits=5, decimal_places=2)
 
     def __str__(self):
-        return f"{self.date} - {self.strategy_name}: {self.return_percent}%"
+        return f"{self.start_date} - {self.framework}"
 
 
 

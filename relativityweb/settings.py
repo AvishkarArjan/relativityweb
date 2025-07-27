@@ -30,7 +30,12 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['relativityweb.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    'relativityweb.onrender.com', 
+    'relativityweb.online',
+    'localhost', 
+    '127.0.0.1'
+    ]
 
 # Application definition
 

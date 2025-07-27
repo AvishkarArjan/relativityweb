@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}AI Funds{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Inter from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind config with Inter font -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+    <div class="max-w-3xl mx-auto p-6 bg-white min-h-screen shadow-md font-inter">
+        <header class="mb-6">
+            <h1 class="text-3xl font-bold text-blue-700 mb-2 ">AI Investment Funds</h1>
+            <nav class="space-x-4">
+                <a href="/" class="text-blue-600 hover:underline">Home</a>
+                <a href="/about/" class="text-blue-600 hover:underline">About</a>
+                <a href="/nebula/" class="text-blue-600 hover:underline">Nebula 🌌</a>
+            </nav>
+        </header>
+
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+
+        <footer class="mt-6 text-sm text-gray-500 border-t pt-4">
+            <p>&copy; 2025 AI Fund Research</p>
+        </footer>
+    </div>
+
+</body>
+</html>
+

@@ -102,6 +102,12 @@ DATABASES = {
 #     }
 # }
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://relativityweb.onrender.com",
+    "http://relativityweb.online",
+    "https://relativityweb.online",
+]
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators

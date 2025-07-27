@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}AI Funds{% endblock %}</title>
+    <title>Relativity{% block title %}{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Inter from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
+    <!-- Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -25,26 +26,43 @@
     </script>
 </head>
 
+<body class="bg-gray-100 text-gray-800 font-sans min-h-screen flex flex-col font-inter">
 
-<body class="bg-gray-100 text-gray-800 font-sans">
-
-    <div class="max-w-3xl mx-auto p-6 bg-white min-h-screen shadow-md font-inter">
+    <div class="max-w-6xl mx-auto p-6 w-full flex flex-col flex-grow">
         <header class="mb-6">
-            <h1 class="text-3xl font-bold text-blue-700 mb-2 ">AI Investment Funds</h1>
+            <div class="flex justify-between">
+                <div class="flex gap-2 items-center">
+                    <h1 class="text-4xl font-bold text-gray-700 mb-2">Relativity</h1>
+                    <a href="/about" class="text-xs text-gray-500 hover:underline">Learn more (?)</a>
+                </div>
+
+                <div class="flex gap-1 items-center">
+                    <p class="text-xs">Founded by 
+                        <a class="text-blue-600 hover:underline" href="https://avishkararjan.github.io/" target="_blank">Avishkar</a>
+                    </p>
+                    <a class="hover:text-blue-600 hover:underline" href="https://x.com/avishkararjan" target="_blank">𝕏</a>
+                    <a class="hover:text-blue-600 hover:underline" href="https://www.linkedin.com/in/avishkararjan/" target="_blank">
+                        <i class="fa fa-linkedin-square"></i>
+                    </a>
+                    <a class="hover:text-blue-600 hover:underline" href="https://github.com/AvishkarArjan/" target="_blank">
+                        <i class="fa fa-github"></i>
+                    </a>
+                </div>
+            </div>
             <nav class="space-x-4">
-                <a href="/" class="text-blue-600 hover:underline">Home</a>
-                <a href="/about/" class="text-blue-600 hover:underline">About</a>
-                <a href="/nebula/" class="text-blue-600 hover:underline">Nebula 🌌</a>
+                <a href="/" class="text-gray-600 hover:underline">Home</a>
+                <a href="/about/" class="text-gray-600 hover:underline">About</a>
+                <a href="/nebula/" class="text-gray-600 hover:underline">Nebula 🌌</a>
             </nav>
         </header>
 
-        <main>
+        <main class="flex-grow">
             {% block content %}
             {% endblock %}
         </main>
 
-        <footer class="mt-6 text-sm text-gray-500 border-t pt-4">
-            <p>&copy; 2025 AI Fund Research</p>
+        <footer class="mt-6 text-sm text-gray-500 border-t pt-4 flex justify-center">
+            <p>&copy; 2025 Relativity</p>
         </footer>
     </div>
 

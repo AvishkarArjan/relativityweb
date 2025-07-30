@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} - Voyager{% endblock %}
+
+{% block content %}
+
+<h2 class="text-2xl font-semibold mb-4">Project Voyager</h2>
+
+    <div class="flex flex-col items-start md:flex-row gap-10 md:gap-20">
+      <div class="flex flex-col gap-5">
+            <p class="text-gray-700 leading-relaxed">
+                A share's public data is free.
+                The news is free.
+                The internet is free.
+            </p>
+
+            <p class="">Everything is technically free. But when you try to scrape it, you face regulations. Thats just feels bad. Lets change that.</p>
+        
+        </div>
+
+       
+        <div class="flex flex-col mx-auto w-4/5">
+            <img src="{% static 'images/voyager.gif' %}" class="mb-1">
+            <!-- <p class="text-[10px]"> -->
+            <!-- <i> -->
+            <!-- "A <b>Nebula</b> is a vast cloud of ionized gas and cosmic dust in space, often serving as a nursery for the formation of stars and planetary systems." — Adapted from  -->
+            <!-- <a class="text-blue-500 hover:underline" href="https://en.wikipedia.org/wiki/Nebula#:~:text=A%20nebula%20(,planetary%20system%20objects.">Wikipedia</a>.  -->
+            <!-- </i> -->
+            <!-- It essentially represents the formation of something valuable from a large hunk of randomness. It holds the potential for greatness beyond comprehension — much like an investment portfolio. -->
+            <!-- <p> -->
+        
+        </div>
+
+        
+  
+ 
+    </div>
+
+
+{% endblock %}

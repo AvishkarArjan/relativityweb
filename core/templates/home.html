@@ -51,6 +51,53 @@
         </tbody>
     </table>
 
+    <br>
+
+
+        <div class='flex justify-between items-center w-full mb-2'>
+            <div class="flex gap-2 items-center">
+                <h2 class="text-xl font-semibold">Backtesting Results</h2>
+                <!-- <img class="max-w-[50px]" src="{% static 'images/live.gif' %}" alt="Live"> -->
+            </div>
+
+            <div>
+                <!-- <p class="text-xs italic"> -->
+                <!--     *Viw -->
+                <!--     <a class="text-blue-500 hover:underline" href="/nebula/">Project Nebula</a> -->
+                <!-- </p> -->
+            </div>
+            
+
+        </div>
+
+
+    <table class="min-w-full bg-gray-100 shadow rounded">
+        <thead class="">
+            <tr>
+                <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">Portfolio</th>
+                <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">Start Date</th>
+                <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">Period (Years)</th>
+                <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">ARR (%)</th>
+                <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">CRR (%)</th>
+            </tr>
+        </thead>
+        <tbody class="text-sm">
+            {% for r in returns %}
+            <tr class="border-t">
+                <td class="px-4 py-2">{{ r.framework }}</td>
+                <td class="px-4 py-2">{{ r.start_date }}</td>
+                <td class="px-4 py-2">{{ r.period }}</td>
+                <td class="px-4 py-2">{{ r.arr }}</td>
+                <td class="px-4 py-2">{{ r.crr }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4" class="px-4 py-2 text-center text-gray-500">No data available.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
     
 {% endblock %}
 

@@ -2,12 +2,12 @@ from django.db import models
 
 class Portfolio(models.Model):
     framework = models.CharField(max_length=200)
+    data_source = models.CharField(max_length=200) # YFinance, Screener, Voyager
     start_date = models.DateField()
     init_amt = models.DecimalField(max_digits=20, decimal_places=2)
-    
 
     def __str__(self):
-        return f"{self.framework} - {self.start_date}"
+        return f"{self.framework} - {self.data_source} - {self.start_date}"
 
 
 class Holding(models.Model):

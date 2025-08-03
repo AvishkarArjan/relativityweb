@@ -9,27 +9,30 @@
 
         <div class='flex justify-between items-center w-full'>
             <div class="flex gap-2 items-center">
-                <h2 class="text-2xl font-semibold">Performance of our AI Portfolios</h2>
+                <h2 class="text-2xl font-semibold">Active AI Portfolios</h2>
                 <img class="max-w-[50px]" src="{% static 'images/live.gif' %}" alt="Live">
             </div>
-
             <div>
                 <p class="text-xs italic">
                     *Results of
                     <a class="text-blue-500 hover:underline" href="/nebula/">Project Nebula</a>
                 </p>
             </div>
-            
-
         </div>
 
+        <!-- <p class="text-xs">Performance of our AI generated stock portfolios</p> -->
 
     <table class="min-w-full bg-white shadow rounded">
         <thead class="">
             <tr>
                 <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">Portfolio</th>
+                <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">Framework</th>
+                <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">Data Source</th>
                 <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">Start Date</th>
+                <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">End Date</th>
                 <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">Period (Years)</th>
+                <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">Initial Amount</th>
+                <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">Final Amount</th>
                 <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">ARR (%)</th>
                 <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">CRR (%)</th>
             </tr>
@@ -37,9 +40,14 @@
         <tbody class="text-sm">
             {% for r in returns %}
             <tr class="border-t">
+                <td class="px-4 py-2">{{ r.name }}</td>
                 <td class="px-4 py-2">{{ r.framework }}</td>
+                <td class="px-4 py-2">{{ r.data_source }}</td>
                 <td class="px-4 py-2">{{ r.start_date }}</td>
+                <td class="px-4 py-2">{{ r.end_date }}</td>
                 <td class="px-4 py-2">{{ r.period }}</td>
+                <td class="px-4 py-2">{{ r.init_amt }}</td>
+                <td class="px-4 py-2">{{ r.end_amt }}</td>
                 <td class="px-4 py-2">{{ r.arr }}</td>
                 <td class="px-4 py-2">{{ r.crr }}</td>
             </tr>
@@ -75,8 +83,13 @@
         <thead class="">
             <tr>
                 <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">Portfolio</th>
+                <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">Framework</th>
+                <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">Data Source</th>
                 <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">Start Date</th>
+                <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">End Date</th>
                 <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">Period (Years)</th>
+                <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">Initial Amount</th>
+                <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">Final Amount</th>
                 <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">ARR (%)</th>
                 <th class="px-4 py-2 text-start text-xs font-medium text-gray-500 uppercase border">CRR (%)</th>
             </tr>
@@ -84,9 +97,14 @@
         <tbody class="text-sm">
             {% for r in returns %}
             <tr class="border-t">
+                <td class="px-4 py-2">{{ r.name }}</td>
                 <td class="px-4 py-2">{{ r.framework }}</td>
+                <td class="px-4 py-2">{{ r.data_source }}</td>
                 <td class="px-4 py-2">{{ r.start_date }}</td>
+                <td class="px-4 py-2">{{ r.end_date }}</td>
                 <td class="px-4 py-2">{{ r.period }}</td>
+                <td class="px-4 py-2">{{ r.init_amt }}</td>
+                <td class="px-4 py-2">{{ r.end_amt }}</td>
                 <td class="px-4 py-2">{{ r.arr }}</td>
                 <td class="px-4 py-2">{{ r.crr }}</td>
             </tr>

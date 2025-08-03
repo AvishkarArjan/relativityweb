@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Portfolio
+from .models import Portfolio, Framework, DataSource
 
 def home(request):
     returns = Portfolio.objects.all().order_by('-start_date')  # latest first
@@ -9,7 +9,9 @@ def about(request):
     return render(request, 'about.html')
 
 def nebula(request):
-    return render(request, 'nebula.html')
+    frameworks = Framework.objects.all()
+    sources = DataSource.objects.all()
+    return render(request, 'nebula.html', {"frameworks":frameworks, "sources":sources})
 
 def voyager(request):
     return render(request, 'voyager.html')
